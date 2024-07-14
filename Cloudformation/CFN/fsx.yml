@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  FSxShare:
+    Type: 'AWS::FSx::FileSystem'
+    Properties:
+      FileSystemType: WINDOWS
+      StorageCapacity: 300
+      SubnetIds:
+        - subnet-0aceebfe8d46837e7  
+      SecurityGroupIds:
+        - sg-0836fe8a201d93054       
+      WindowsConfiguration:
+        ThroughputCapacity: 8
+        ActiveDirectoryId: d-90679dfb2a 
+        DeploymentType: SINGLE_AZ_1
+        PreferredSubnetId: subnet-0aceebfe8d46837e7  
+      Tags:
+        - Key: Name
+          Value: MyFSxShare
